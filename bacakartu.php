@@ -61,7 +61,11 @@
             }
             else{
                  //update sesuai pilihan mode absen
-                 if($mode_absen == 2){
+                 if($mode_absen == 1){
+                    echo "<h1>Selamat Datang <br> $nama </h1>";
+                    mysqli_query($konek,"UPDATE absensi SET jam_masuk='$jam' WHERE nokartu='$nokartu' AND tanggal='$tanggal'");
+                 }
+                 else {
                     echo "<h1>Selamat Jalan <br> $nama </h1>";
                     mysqli_query($konek,"UPDATE absensi SET jam_pulang='$jam' WHERE nokartu='$nokartu' AND tanggal='$tanggal'");
                  }
